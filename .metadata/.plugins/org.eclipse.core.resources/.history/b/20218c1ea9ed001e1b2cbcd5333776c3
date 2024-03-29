@@ -35,9 +35,10 @@ public class SW_5656_벽돌깨기 {
 			int[][] copy=new int[h][w];
 			copy=copy(map);
 			
-			dfs(0,copy);
+			copy=crash(copy,1,2);
+			copy=crash(copy,2,2);
 			
-			System.out.println(min);
+			print(copy);
 		}
 		
 		

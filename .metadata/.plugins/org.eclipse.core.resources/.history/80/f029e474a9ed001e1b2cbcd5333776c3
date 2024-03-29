@@ -36,7 +36,7 @@ public class SW_5656_벽돌깨기 {
 			copy=copy(map);
 			
 			dfs(0,copy);
-			
+			print(copy);
 			System.out.println(min);
 		}
 		

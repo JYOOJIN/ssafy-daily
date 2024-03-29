@@ -35,9 +35,10 @@ public class SW_5656_벽돌깨기 {
 			int[][] copy=new int[h][w];
 			copy=copy(map);
 			
-			dfs(0,copy);
+			copy=crash(copy,1,2);
+			copy=crash(copy,2,2);
 			
-			System.out.println(min);
+			print(copy);
 		}
 		
 		
@@ -53,7 +54,7 @@ public class SW_5656_벽돌깨기 {
 					if(map[i][j]>0) countBlock+=1;
 				}
 			}
-			if(min>countBlock) min=countBlock;
+			if(max<countBlock) max=countBlock;
 			
 			return;
 		}

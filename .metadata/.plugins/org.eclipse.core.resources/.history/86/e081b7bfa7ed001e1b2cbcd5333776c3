@@ -8,7 +8,6 @@ public class SW_5656_벽돌깨기 {
 	public static int[][] dir= {{-1,0},{0,1},{1,0},{0,-1}}; //위쪽 오른쪽 아래쪽 왼쪽
 	public static int n,w,h;
 	public static int[][] map;
-	public static int min=Integer.MAX_VALUE;
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -35,37 +34,21 @@ public class SW_5656_벽돌깨기 {
 			int[][] copy=new int[h][w];
 			copy=copy(map);
 			
-			dfs(0,copy);
+			copy=crash(copy,1,2);
+			copy=crash(copy,2,2);
 			
-			System.out.println(min);
+			print(copy);
 		}
 		
 		
 		
 	}
 	
-	public static void dfs(int depth,int[][] map) {
+	public static void dfs(int depth) {
 		
 		if(depth==n) { //구슬 다 사용했다면
-			int countBlock=0;
-			for(int i=0;i<h;i++) {
-				for(int j=0;j<w;j++){
-					if(map[i][j]>0) countBlock+=1;
-				}
-			}
-			if(min>countBlock) min=countBlock;
 			
 			return;
-		}
-		
-		int[][] block=choose(map);
-		for(int i=0;i<w;i++) {
-			int x=block[i][0];
-			int y=block[i][1];
-			
-			map=crash(map,x,y);
-			dfs(depth+1,map);
-			
 		}
 		
 		
@@ -79,12 +62,11 @@ public class SW_5656_벽돌깨기 {
 				if(map[i][j]>0) {
 					block[j][0]=i;
 					block[j][1]=j;
-					break;
 				}
 			}
 		}
 		
-		return block; //구슬이 때릴 수 있는 좌표가 담긴 배열
+		return block;
 	}
 	
 	public static void print(int[][] arr) {
