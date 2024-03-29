@@ -1,0 +1,376 @@
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 본 코드 */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  color: grey;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.maintitle > a:nth-child(1) {
+  font-size: 40px;
+  padding-right: 5px;
+  padding-left: 100px;
+}
+
+.menuList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+img {
+  display: block;
+}
+
+.storeOpen {
+  padding: 7px 65px;
+  background-color: rgb(244, 244, 27);
+  border: 0;
+  border-radius: 4px;
+}
+
+.st {
+  background-color: beige;
+  width: 202px;
+  padding: 10px;
+  margin: 5px 0px;
+}
+
+.local {
+  font-weight: bold;
+  padding: 3px 0;
+}
+
+.st ul {
+  padding: 5px 15px;
+}
+
+.st ul li {
+  padding: 5px 0;
+}
+
+.choice {
+  border: 1px solid black;
+  width: 211px;
+  padding: 4px;
+}
+
+.lan {
+  width: 50px;
+  height: 60px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.des {
+  font-weight: bold;
+  padding: 5px 5px;
+}
+
+.option {
+  display: flex;
+  align-items: end;
+  padding: 10px;
+}
+
+.buttoncontainer {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+  gap: 6px;
+}
+
+.vote {
+  background-color: blueviolet;
+  color: white;
+  gap: 10px;
+}
+
+.result {
+  display: flex;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 10px 5px;
+}
+
+.langtitle {
+  display: flex;
+  justify-content: left;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.pbook {
+  display: flex;
+}
+
+.bookimg {
+  width: 200px;
+  height: 260px;
+  padding: 5px;
+}
+
+.pbox {
+  border: 1px solid black;
+  margin: 0 10px;
+  box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pbox p {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.etitle {
+  display: flex;
+  justify-content: left;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.ebook {
+  display: flex;
+}
+
+.eimg {
+  width: 200px;
+  height: 260px;
+  padding: 5px;
+}
+
+.ebox {
+  border: 1px solid black;
+  margin: 0 10px;
+  box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ebox p {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  width: 200px;
+}
+
+.title {
+  display: flex;
+  justify-content: left;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+}
+
+thead {
+  font-weight: bold;
+}
+
+thead th {
+  padding: 5px 10px;
+}
+
+.popular tbody tr:nth-child(odd) {
+  background-color: rgb(225, 218, 218);
+}
+
+tbody tr td {
+  padding: 5px 10px;
+}
+
+.now tbody tr {
+  border-bottom: 1px solid gray;
+}
+
+.now tbody tr td {
+  border-right: 1px solid gray;
+}
+
+.now thead {
+  border-bottom: 1px solid gray;
+}
+.now table {
+  border: 1px solid gray;
+}
+
+footer {
+  padding-left: 240px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: left;
+  padding: 10px 0;
+  gap: 10px;
+  color: gray;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+table {
+  width: 550px;
+}
+
+.full {
+  display: block;
+}
+
+.profile {
+  width: 100px;
+  height: 100px;
+  padding-left: 50px;
+  padding-bottom: 15px;
+}

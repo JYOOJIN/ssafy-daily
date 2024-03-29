@@ -1,0 +1,68 @@
+package daily_0221;
+
+import java.io.*;
+import java.util.*;
+
+public class SW_3289_서로소집합 {
+	
+
+	public static void makeSet(int[] parent,int n) {
+		for(int i=1;i<=n;i++) {
+			parent[i]=i;
+		}
+		
+	}
+	
+	public static void FindSet() {
+		
+		
+	}
+	
+	public static void UnionSet() {
+		
+	}
+	
+	public static void RankSet() {
+		
+	}
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
+		
+		int tc=Integer.parseInt(br.readLine());
+		
+		for(int t=1;t<=tc;t++) {
+			StringBuilder sb=new StringBuilder();
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int m=Integer.parseInt(st.nextToken());
+			
+			int[] parent=new int[n+1]; //1부터 n까지
+			makeSet(parent,n+1);
+			
+			for(int d=0;d<m;d++) {
+				st=new StringTokenizer(br.readLine());
+				int op=Integer.parseInt(st.nextToken());
+				int a=Integer.parseInt(st.nextToken());
+				int b=Integer.parseInt(st.nextToken());
+
+				if(op==0) {
+					
+				}else if(op==1) {
+					
+				}
+			}
+
+			bw.write("#"+t+" "+sb);
+			
+			
+		}
+		bw.flush();
+		bw.close();
+		
+
+	}
+	
+}

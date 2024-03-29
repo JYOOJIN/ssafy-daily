@@ -1,0 +1,35 @@
+package daily_0327;
+
+import java.util.*;
+import java.io.*;
+
+public class BJ_7576_토마토 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		int n=Integer.parseInt(st.nextToken());
+		int m=Integer.parseInt(st.nextToken());
+		
+		int[][] tom=new int[n][m];
+		
+		for(int i=0;i<n;i++) {
+			st=new StringTokenizer(br.readLine());
+			for(int j=0;j<m;j++) {
+				tom[i][j]=Integer.parseInt(st.nextToken());
+			}
+		}
+		
+		
+	}
+	
+	public static void bfs(int currentx,int currenty) {
+		
+		Queue<int[]> q=new ArrayDeque<>();
+		
+		q.add(new int[][] {currentx,currenty});
+		
+	}
+
+}

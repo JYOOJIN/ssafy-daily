@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>투표 생성</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="js/cafe.js"></script>
+  </head>
+  <body>
+    <div class="poll">
+      <h3 class="poll_title">투표 만들기1</h3>
+      <div class="poll_content">
+        <form action="">
+          <!-- ## see : <div> 시작일/종료일 엘리먼트 추가하기 -->
+          <div class="poll_mb">
+            <label for="start_date">시작일</label>
+            <input type="date" id="start_date" name="start_date" />
+
+            <label>종료일<input type="date" id="end_date" name="end_date" /> </label>
+          </div>
+
+          <div class="poll_mb">
+            <label>질문 내용</label>
+            <input type="text" id="question" name="question" placeholder="질문내용..." />
+          </div>
+          <div class="poll_mb">
+            <label>답변 항목</label>
+            <button type="button" class="button" onclick="javascript:addAnswer();">추가</button>
+          </div>
+
+          <!-- 답변 항목 리스트 동적 추가: 기본1개 설정 -->
+          <div id="poll_answer_list">
+            <div class="poll_mb">
+              <input type="text" name="answer" />
+            </div>
+          </div>
+          <div class="poll_make">
+            <button type="button" class="button btn_primary" onclick="javascript:makePoll();">
+              투표 생성
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

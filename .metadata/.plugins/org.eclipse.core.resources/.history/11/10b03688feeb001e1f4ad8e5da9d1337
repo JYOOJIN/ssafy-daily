@@ -1,0 +1,12 @@
+package daily_0327;
+
+import java.util.*;
+import java.io.*;
+
+public class BJ_7576_토마토 {
+
+	public static void main(String[] args) throws IOException{
+
+	}
+
+}

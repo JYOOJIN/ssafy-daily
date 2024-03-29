@@ -1,0 +1,12 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="java.lang.AbstractStringBuilder"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="java.lang.Appendable"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="com.ssafy.sample.model.dto.ProductDto"><rhs name\="com.ssafy.sample.model.dto.ProductDto"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="com.ssafy.product.model.service.ProductService"><rhs name\="com.ssafy.product.model.service.ProductServiceImpl"/></lhs><lhs name\="com.ssafy.product.model.dao.ProductDao"><rhs name\="com.ssafy.product.model.dao.ProductDaoImpl"/></lhs><lhs name\="com.ssafy.member.model.servicce.MemberService"><rhs name\="com.ssafy.member.model.servicce.MemberServiceImpl"/></lhs><lhs name\="com.ssafy.member.model.dao.MemberDao"><rhs name\="com.ssafy.member.model.dao.MemberDaoImpl"/></lhs><lhs name\="com.ssafy.member.model.dto.MemberDto"><rhs name\="com.ssafy.member.model.dto.MemberDto"/></lhs><lhs name\="com.ssafy.product.model.dto.ProductDto"><rhs name\="com.ssafy.product.model.dto.ProductDto"/></lhs></history>
+content_assist_number_of_computers=15
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

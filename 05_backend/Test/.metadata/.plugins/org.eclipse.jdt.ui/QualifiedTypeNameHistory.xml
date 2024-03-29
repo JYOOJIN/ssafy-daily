@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.PreparableStatement"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.ssafy.sample.model.dto.ProductDto"/>
+    <fullyQualifiedTypeName name="com.ssafy.sample.util.DBUtil"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.dao.ProductDao"/>
+    <fullyQualifiedTypeName name="com.ssafy.member.model.dao.MemberDaoImpl"/>
+    <fullyQualifiedTypeName name="com.ssafy.member.model.dao.MemberDao"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.ssafy.util.DBUtil"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.service.ProductServiceImpl"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.service.ProductService"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.ServletException"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.controller.ProductController"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.dao.ProductDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="com.ssafy.member.model.servicce.MemberServiceImpl"/>
+    <fullyQualifiedTypeName name="com.ssafy.member.model.servicce.MemberService"/>
+    <fullyQualifiedTypeName name="com.ssafy.member.model.dto.MemberDto"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.ssafy.product.model.dto.ProductDto"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,64 @@
+package daily_0221;
+
+import java.io.*;
+import java.util.*;
+
+public class SW_3289_서로소집합 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int tc=Integer.parseInt(br.readLine());
+		
+		for(int t=1;t<=tc;t++) {
+			StringBuilder sb=new StringBuilder();
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int m=Integer.parseInt(st.nextToken());
+			
+			int[] parent=new int[n+1]; //1부터 n까지
+			for(int i=1;i<=n;i++) { //MakeSet
+				parent[i]=i;
+			}
+			
+			for(int d=0;d<m;d++) {
+				st=new StringTokenizer(br.readLine());
+				int cal=Integer.parseInt(st.nextToken());
+				int a=Integer.parseInt(st.nextToken());
+				int b=Integer.parseInt(st.nextToken());
+
+				if(cal==0) { //UnionSet
+					parent[b]=a;
+				}else if(cal==1) { //FindSet
+					int[] findA=Arrays.copyOf(parent, n+1);
+					int[] findB=Arrays.copyOf(parent, n+1);
+					
+					
+					int aRoot=find(findA,a);;
+					int bRoot=find(findB,b);
+					
+					System.out.println("a대표자: "+findA[a] + "/ b대표자: "+findB[b]);
+					
+					if(aRoot==bRoot) sb.append(1);
+					else sb.append(0);
+				}
+			}
+
+			System.out.println("#"+t+" "+sb);
+			
+		}
+		
+
+	}
+	
+	public static int find(int[] find,int c) {
+		if(c==find[c]) return c;
+		
+		c=find[c];
+		return find(find,c);
+		
+		
+	}
+
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>SSAFY BOOK CAFE</title>
+  </head>
+  <body>
+    <header>
+      <div class="maintitle">
+        <a href="">SSAFY BookCafe</a>
+        <a href="">공지사항</a>
+      </div>
+
+      <nav class="menuList">
+        <a href="">로그인</a><br />
+        <a href="">회원가입</a><br />
+        <a href="">로그아웃</a><br />
+        <a href="">마이페이지</a><br />
+        <a href="">관리자</a><br />
+      </nav>
+    </header>
+    <div class="full">
+      <section>
+        <aside>
+          <div>
+            <img src="img/noimg.png" alt="" class="profile" />
+            <img src="img/profile.png" alt="" class="profile" />
+          </div>
+          <div>
+            <input type="button" value="전국매장펼치기" class="storeOpen" />
+            <ul>
+              <div class="st">
+                <li>
+                  <p class="local">서울</p>
+                  <ul>
+                    <li>역삼점</li>
+                    <li>선릉점</li>
+                  </ul>
+                </li>
+              </div>
+
+              <div class="st">
+                <li>
+                  <p class="local">대전</p>
+                  <ul>
+                    <li>학하점</li>
+                    <li>봉명점</li>
+                  </ul>
+                </li>
+              </div>
+
+              <div class="st">
+                <li>
+                  <p class="local">구미</p>
+                  <ul>
+                    <li>안동점</li>
+                    <li>공단점</li>
+                  </ul>
+                </li>
+              </div>
+
+              <div class="st">
+                <li>
+                  <p class="local">광주</p>
+                  <ul>
+                    <li>하남산단점</li>
+                    <li>광주역점</li>
+                  </ul>
+                </li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="choice">
+            <h3>[당신의 선택]</h3>
+            <p class="des">공부하고 싶은 분야를 골라 주세요!!!</p>
+            <ul>
+              <li class="option">
+                <input type="radio" name="python" id="python" /><img
+                  src="img/poll/python.png"
+                  alt="파이썬 로고"
+                  class="lan"
+                />python
+              </li>
+              <li class="option">
+                <input type="radio" name="HTML5" id="HTML5" /><img
+                  src="img/poll/html5.png"
+                  alt="html5 로고"
+                  class="lan"
+                />HTML5
+              </li>
+              <li class="option">
+                <input type="radio" name="Vue.js" id="Vue.js" /><img
+                  src="img/poll/vuejs.png"
+                  alt="뷰 로고"
+                  class="lan"
+                />Vue.js
+              </li>
+              <li class="option">
+                <input type="radio" name="Java" id="Java" /><img
+                  src="img/poll/java.png"
+                  alt="자바 로고"
+                  class="lan"
+                />Java
+              </li>
+            </ul>
+            <div class="buttoncontainer">
+              <input type="button" value="투표하기" class="vote" />
+              <input type="button" value="결과보기" class="result" />
+            </div>
+
+            <br />
+            <p class="day">투표기간: 21.03.01 ~ 21.03.31</p>
+          </div>
+        </aside>
+        <div class="main">
+          <div>
+            <h3 class="langtitle">[프로그래밍 언어]</h3>
+            <ul class="pbook">
+              <div class="pbox">
+                <li><img src="img/book/p_book01.png" alt="교재1" class="bookimg" /></li>
+                <p>Do it! 점프 투 파이썬</p>
+                <p>(18,800원)</p>
+              </div>
+              <div class="pbox">
+                <li><img src="img/book/p_book02.png" alt="교재2" class="bookimg" /></li>
+                <p>HTML5 API 프로그래밍</p>
+                <p>(23,000원)</p>
+              </div>
+              <div class="pbox">
+                <li><img src="img/book/p_book03.png" alt="교재3" class="bookimg" /></li>
+                <p>백견불여일타 Vue.js입문</p>
+                <p>(22,000원)</p>
+              </div>
+              <div class="pbox">
+                <li><img src="img/book/p_book04.png" alt="교재4" class="bookimg" /></li>
+                <p>Java 프로그래밍</p>
+                <p>(26,500원)</p>
+              </div>
+              <div class="pbox">
+                <li><img src="img/book/p_book05.png" alt="교재5" class="bookimg" /></li>
+                <p>토비의 스프링 3.1</p>
+                <p>(40,000원)</p>
+              </div>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="etitle">[에세이]</h3>
+            <ul class="ebook">
+              <div class="ebox">
+                <li><img src="img/book/e_book01.png" alt="" class="eimg" /></li>
+                <p>2인조</p>
+                <p>(14,800원)</p>
+              </div>
+
+              <div class="ebox">
+                <li><img src="img/book/e_book02.png" alt="" class="eimg" /></li>
+                <p>안녕, 소중한 사람</p>
+                <p>(15,000원)</p>
+              </div>
+
+              <div class="ebox">
+                <li><img src="img/book/e_book03.png" alt="" class="eimg" /></li>
+                <p>꽃을 보든 너를 본다</p>
+                <p>(10,800원)</p>
+              </div>
+
+              <div class="ebox">
+                <li><img src="img/book/e_book04.png" alt="" class="eimg" /></li>
+                <p>곰돌이 푸, 행복한 일은 매일 있어</p>
+                <p>(12,000원)</p>
+              </div>
+
+              <div class="ebox">
+                <li><img src="img/book/e_book05.png" alt="" class="eimg" /></li>
+                <p>하마터면 열심히 살 뻔했다</p>
+                <p>(15,000원)</p>
+              </div>
+            </ul>
+          </div>
+          <div class="article">
+            <div class="popular">
+              <h3 class="title">[인기글]</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>자바공부 쉽게 하는법!!</td>
+                    <td>이쎄림</td>
+                    <td>1756</td>
+                  </tr>
+                  <tr>
+                    <td>알고리즘은 자바?파이썬?</td>
+                    <td>홍정밍</td>
+                    <td>998</td>
+                  </tr>
+                  <tr>
+                    <td>스프링 정복하기~</td>
+                    <td>김나켠</td>
+                    <td>856</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="now">
+              <h3 class="title">[최신글]</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>web 관련 질문 있어요</td>
+                    <td>이주녕</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>vuejs는 이렇게 공부해보세요.</td>
+                    <td>조밍기</td>
+                    <td>289</td>
+                  </tr>
+                  <tr>
+                    <td>꽃길만 걸어요^^</td>
+                    <td>루해면</td>
+                    <td>344</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <ul>
+          <li><a href="">카페소개</a></li>
+          <li><a href="">개인정보처리방침</a></li>
+          <li><a href="">이용약관</a></li>
+          <li><a href="">오시는길</a></li>
+          <li>&copy SSAFY Corp.</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

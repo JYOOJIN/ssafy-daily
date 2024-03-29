@@ -1,0 +1,24 @@
+package daily_0206;
+
+
+/**
+ * @author 정유진
+ * 문제: BJ_1233_주사위
+ * 난이도: B2
+ * 수행결과: 맞았습니다!
+ * 메모리:  KB
+ * 시간:  ms
+ * 코드길이:  B
+ * 풀이 전략: 
+ * 			
+ */
+
+public class SW_1233 {
+	
+	
+
+	public static void main(String[] args) {
+	
+	}
+
+}

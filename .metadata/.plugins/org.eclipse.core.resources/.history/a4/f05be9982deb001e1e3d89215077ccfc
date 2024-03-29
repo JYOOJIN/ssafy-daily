@@ -1,0 +1,41 @@
+package daily_0326;
+
+import java.io.*;
+import java.util.*;
+
+
+/**
+ * @author 정유진
+ * 문제: BJ_4485_녹색 옷 입은 애가 젤다지?
+ * 난이도: G4
+ * 수행결과: 맞았습니다!!
+ * 메모리: KB
+ * 시간:  ms
+ * 코드길이:  B
+ * 풀이 전략: 다익스트라 - DP를 이용한 최단 경로 탐색 알고리즘
+ * 
+ * 
+ */
+
+
+public class BJ_4485_녹색옷입은애가젤다지 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		while(true) {
+			int n=Integer.parseInt(br.readLine());
+			if(n==0) break;
+			
+			
+			
+		}
+		
+		
+		
+		
+
+	}
+
+}

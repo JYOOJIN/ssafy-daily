@@ -1,0 +1,45 @@
+package daily_0221;
+
+import java.io.*;
+import java.util.*;
+
+public class SW_3289_서로소집합 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int tc=Integer.parseInt(br.readLine());
+		
+		for(int t=1;t<=tc;t++) {
+			StringBuilder sb=new StringBuilder();
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int m=Integer.parseInt(st.nextToken());
+			
+			for(int d=0;d<m;d++) {
+				st=new StringTokenizer(br.readLine());
+				int cal=Integer.parseInt(st.nextToken());
+				int a=Integer.parseInt(st.nextToken());
+				int b=Integer.parseInt(st.nextToken());
+				
+				int[] parent=new int[n+1]; //1부터 n까지
+				
+				if(cal==0) { //Union
+					parent[b]=a;
+				}else if(cal==1) { //Find
+					
+					
+					
+					
+				}
+			}
+			
+			
+			
+		}
+		
+
+	}
+
+}

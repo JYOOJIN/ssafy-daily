@@ -1,0 +1,102 @@
+package daily_0327;
+
+import java.io.*;
+import java.util.*;
+
+
+public class BJ_2239_스도쿠 {
+	
+	public static final int N=9;
+	public static int[][] arr=new int[N][N];
+	public static List<int[]> list=new ArrayList<>();
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		
+		//스도쿠 값 입력받기
+		for(int i=0;i<N;i++) {
+			s=br.readLine();
+			String[] carr=s.split("");
+			for(int j=0;j<N;j++) {
+				arr[i][j]=Integer.parseInt(carr[j]);
+				if(arr[i][j]==0) {
+					list.add(new int[] {i,j}); //빈칸인 좌표를 저장
+				}
+			}
+		}
+		
+		dfs(0);
+		
+		for(int i=0;i<N;i++) {
+			for(int j=0;j<N;j++) {
+				System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
+		
+
+	}
+	
+	public static void dfs(int index) {
+		
+		//if(index==list.size()) return;
+		
+		int x=list.get(index)[0];
+		int y=list.get(index)[1];
+		
+		for(int i=1;i<=9;i++) {
+			if(check1(x,y,i) && check2(x,y,i) && check3(x,y,i)) {
+				System.out.println(x+","+y+"채우기: "+i);
+				arr[x][y]=i;
+				dfs(index+1);
+			}
+		
+		}
+		
+		index-=1;
+		return;
+		
+	}
+	
+	
+	//가로 체크
+	public static boolean check1(int x,int y,int value) {
+		
+		for(int i=0;i<N;i++) {
+			if(i==y) continue;
+			if(arr[x][i]==value) return false;
+		}
+
+		return true;
+	}
+	
+	//세로 체크
+	public static boolean check2(int x,int y,int value) {
+		
+		for(int i=0;i<N;i++) {
+			if(i==x) continue;
+			if(arr[i][y]==value) return false;
+		}
+
+		return true;		
+	}
+	
+	//사각형 체크
+	public static boolean check3(int x,int y,int value) {
+		
+		int sx=(x/3)*3;
+		int sy=(y/3)*3;
+		
+		for(int i=sx;i<sx+3;i++) {
+			for(int j=sy;j<sy+3;j++) {
+				if(i==x && j==y) continue;
+				if(arr[i][j]==value) return false;
+			}
+		}
+
+		return true;		
+	}
+	
+
+}

@@ -1,0 +1,70 @@
+package daily_0329;
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * @author 정유진
+ * 문제: BJ_1182_부분수열의합
+ * 난이도: S2
+ * 수행결과: 맞았습니다!!
+ * 메모리: 12584 KB
+ * 시간: 176 ms
+ * 코드길이: 967 B
+ * 풀이 전략: 
+ * 
+ *  */
+
+public class BJ_1182_부분수열의합 {
+	
+	public static int[] arr;
+	public static boolean[] visited;
+	public static int n,s,cnt;
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		n=Integer.parseInt(st.nextToken());
+		s=Integer.parseInt(st.nextToken());
+		cnt=0;
+		
+		arr=new int[n];
+		visited=new boolean[n];
+		
+		st=new StringTokenizer(br.readLine());
+		for(int i=0;i<n;i++) {
+			arr[i]=Integer.parseInt(st.nextToken());
+		}
+		
+		sub(0);
+		System.out.println(cnt);
+		
+	}
+	
+	
+	public static void sub(int depth) {
+		
+		if(depth==n) {
+			int total=0;
+			int flag=1;
+			for(int i=0;i<n;i++) {
+				if(visited[i]) {
+					flag=0;
+					total+=arr[i];
+				}
+			}
+			
+			if(flag==0 && total==s) cnt++;
+			
+			return;
+		}
+		
+		visited[depth]=true;
+		sub(depth+1);
+		visited[depth]=false;
+		sub(depth+1);
+
+	}
+
+}
