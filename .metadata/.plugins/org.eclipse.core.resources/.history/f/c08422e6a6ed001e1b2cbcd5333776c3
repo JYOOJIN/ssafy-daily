@@ -55,11 +55,8 @@ public class SW_5656_벽돌깨기 {
 	}
 	
 	//구슬이 때릴 위치 정하는 함수
-	public static int[][] choose() {
-		int[][] block=new int[w][2]; //x좌표, y좌표 저장
+	public static void choose() {
 		
-		
-		return block;
 	}
 	
 	public static void print(int[][] arr) {
