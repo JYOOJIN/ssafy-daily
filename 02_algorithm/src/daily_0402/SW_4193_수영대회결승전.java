@@ -11,8 +11,8 @@ import java.util.*;
  * 메모리: 22632 KB
  * 시간: 112 ms
  * 코드길이: 2198 B
- * 풀이 전략: 1) bfs(queue)를 이용 - 이때 time 단위로 자르므로 while문 앞에 현재 q.size()만큼 반복
- * 			2) bfs(queue)를 이용 - pq 이용 안하면 먼저 도착하지만 시간이 큰 경우가 있을 수 있다. comparable 사용.
+ * 풀이 전략: 1) bfs(Queue)를 이용 - 이때 time 단위로 자르므로 while문 앞에 현재 q.size()만큼 반복
+ * 		    2) bfs(PriorityQueue)를 이용 - pq 이용 안하면 먼저 도착하지만 시간이 큰 경우가 있을 수 있다. comparable 사용.
  * 
  *  */
 

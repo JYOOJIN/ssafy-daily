@@ -44,6 +44,7 @@ public class SW_5656_벽돌깨기 {
 		
 	}
 	
+	//구슬 떨어트리는 
 	public static void dfs(int depth,int[][] map) {
 		
 		if(depth==n) { //구슬 다 사용했다면
@@ -64,6 +65,7 @@ public class SW_5656_벽돌깨기 {
 			int y=block[i][1];
 			
 			map=crash(map,x,y);
+			print(map);
 			dfs(depth+1,map);
 			
 		}
@@ -73,7 +75,7 @@ public class SW_5656_벽돌깨기 {
 	
 	//구슬이 때릴 위치 정하는 함수
 	public static int[][] choose(int[][] map) {
-		int[][] block=new int[w][2]; //x좌표, y좌표 저장
+		int[][] block=new int[w][2]; //x좌표, y좌표 저장하는 배열
 		for(int j=0;j<w;j++) {
 			for(int i=0;i<h;i++) {
 				if(map[i][j]>0) {
@@ -87,6 +89,7 @@ public class SW_5656_벽돌깨기 {
 		return block; //구슬이 때릴 수 있는 좌표가 담긴 배열
 	}
 	
+	//배열 출력 함수
 	public static void print(int[][] arr) {
 		for(int i=0;i<h;i++) {
 			for(int j=0;j<w;j++) {
@@ -94,6 +97,7 @@ public class SW_5656_벽돌깨기 {
 			}
 			System.out.println();
 		}
+		System.out.println("=================");
 	}
 	
 	//배열 복사 함수
