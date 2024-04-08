@@ -1,0 +1,46 @@
+package daily_0406;
+
+import java.io.*;
+import java.util.*;
+
+public class CT_루돌프의반란 {
+	
+	static int n,m,p,c,d;
+	static int[] r; //루돌프의 좌표
+	static int[][] s; //산타의 좌표
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		n=Integer.parseInt(st.nextToken()); //게임판 크기
+		m=Integer.parseInt(st.nextToken()); //게임 턴 수
+		p=Integer.parseInt(st.nextToken()); //산타의 수
+		c=Integer.parseInt(st.nextToken()); //루돌프의 힘
+		d=Integer.parseInt(st.nextToken()); //산타의 힘
+		
+		r=new int[2];
+		s=new int[n][2];
+		
+		st=new StringTokenizer(br.readLine());
+		
+		r[0]=Integer.parseInt(st.nextToken()); //루돌프의 x 좌표
+		r[1]=Integer.parseInt(st.nextToken()); //루돌프의 y 좌표
+		
+		for(int i=0;i<p;i++) {
+			st=new StringTokenizer(br.readLine());
+			st.nextToken();
+			s[i][0]=Integer.parseInt(st.nextToken()); //산타 i의 x 좌표
+			s[i][1]=Integer.parseInt(st.nextToken()); //산타 i의 y 좌표
+			
+			
+			
+		}
+		
+		
+	}
+	
+	public static int getDis(int sx,int sy,int ex,int ey) {
+		return Math.pow((sx-ex), 2)+Math.pow((sy-ey), 2);
+	}
+
+}

@@ -1,0 +1,35 @@
+package daily_0407;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_21611_마법사상어와블리자드 {
+	
+	static int n,m;
+	static int[][] map;
+
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		n=Integer.parseInt(st.nextToken()); //맵 크기
+		m=Integer.parseInt(st.nextToken()); //블리자드 시전
+		
+		map=new int[n+1][n+1]; //1부터 n까지
+		
+		for(int i=1;i<=n;i++) {
+			st=new StringTokenizer(br.readLine());
+			for(int j=1;j<=n;j++) {
+				map[i][j]=Integer.parseInt(st.nextToken());
+			}
+		}
+		
+		st=new StringTokenizer(br.readLine());
+		int d=Integer.parseInt(st.nextToken()); //블리자드 방향
+		int s=Integer.parseInt(st.nextToken()); //거리
+		
+		
+		
+	}
+
+}

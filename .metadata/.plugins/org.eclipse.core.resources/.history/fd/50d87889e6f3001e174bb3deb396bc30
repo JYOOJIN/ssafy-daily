@@ -1,0 +1,22 @@
+package daily_0406;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_15898_피아 {
+	
+	static int n;
+	static int[][] map;
+	static List<int[][]> list;
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int n=Integer.parseInt(br.readLine());
+		int[][] map=new int[5][5];
+		
+		
+	}
+
+}

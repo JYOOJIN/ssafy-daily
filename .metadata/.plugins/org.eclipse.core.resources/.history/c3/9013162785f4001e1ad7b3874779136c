@@ -1,0 +1,22 @@
+package daily_0407;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_21611_마법사상어와블리자드 {
+	
+	static int n,m;
+	
+
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		n=Integer.parseInt(st.nextToken()); //맵 크기
+		m=Integer.parseInt(st.nextToken()); 
+		
+		
+		
+	}
+
+}

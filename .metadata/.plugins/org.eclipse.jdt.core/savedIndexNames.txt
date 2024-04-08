@@ -1,4 +1,4 @@
-INDEX VERSION 1.134+C:\SSAFY\yoojin\daily\.metadata\.plugins\org.eclipse.jdt.core
-3279423747.index
+INDEX VERSION 1.134+C:\Users\ellka\OneDrive\바탕 화면\ssafy-daily\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
+3279423747.index
 3009054434.index

@@ -1,0 +1,23 @@
+package daily_0405;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_17135_캐슬디펜스 {
+	
+	static int n,m,d;
+	static int[][] map; //변하지 않을 값이기 때문에 전역 선언
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		n=Integer.parseInt(st.nextToken());
+		m=Integer.parseInt(st.nextToken());
+		d=Integer.parseInt(st.nextToken());
+		
+		map=new int[n+1][m];
+	
+	}
+
+}
