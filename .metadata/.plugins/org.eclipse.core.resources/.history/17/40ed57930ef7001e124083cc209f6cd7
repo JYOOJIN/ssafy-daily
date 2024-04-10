@@ -1,0 +1,21 @@
+package daily_0409;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_16236_아기상어_2 {
+
+	static int n;
+	static int[][] map;
+	
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int n=Integer.parseInt(br.readLine());
+		
+		
+		
+	}
+
+}

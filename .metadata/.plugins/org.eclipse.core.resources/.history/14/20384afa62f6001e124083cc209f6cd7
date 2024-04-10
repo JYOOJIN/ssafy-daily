@@ -1,0 +1,32 @@
+package daily_0409;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_19236_청소년상어 {
+	
+	static class Point{
+		int x,y,d; //좌표, 방향
+		boolean isShark; //상어 유무
+		
+		public Point(int x, int y, int d, boolean isShark) {
+			super();
+			this.x = x;
+			this.y = y;
+			this.d = d;
+			this.isShark = isShark;
+		}
+		
+		
+		
+	}
+	
+	
+	static int[][] dir= {{0,0},{-1,0},{-1,-1},{0,-1},{1,-1},{1,0},{1,1},{0,1},{-1,1}}; //상부터 반시계 방향(1~8)
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+	}
+
+}
