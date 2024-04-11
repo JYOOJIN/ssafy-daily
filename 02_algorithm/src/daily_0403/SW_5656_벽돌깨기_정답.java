@@ -75,6 +75,7 @@ public class SW_5656_벽돌깨기_정답 {
 			if(r==h) continue; //현재 줄에는 깨트릴 벽돌이 존재하지 않음. 다음열로 던지기 시도.
 			
 			//벽돌 깨트리기 전에 벽돌 정보 복사
+			//newMap에 map 복사하기
 			copy(map,newMap);
 			//해당 벽돌 깨트리기
 			int brick=newMap[r][c];
