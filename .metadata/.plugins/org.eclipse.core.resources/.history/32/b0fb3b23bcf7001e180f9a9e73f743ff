@@ -1,0 +1,182 @@
+package daily_0411;
+
+import java.io.*;
+import java.util.*;
+
+public class SW_5656_벽돌깨기 {
+	
+	static class Point{
+		int x,y;
+
+		public Point(int x, int y) {
+			super();
+			this.x = x;
+			this.y = y;
+		}
+		
+	}
+
+	
+	static int n,w,h,min; //n개의 구슬을 모두 떨어트린 후 최대한 많은 벽돌을 깨서 최대한 적은 벽돌이 남도록 한다
+	static int[][] map; 
+	static int[][] dir= {{-1,0},{0,1},{1,0},{0,-1}}; //방향벡터 (상 우 하 좌)
+	static List<Point> list;
+	
+	public static void main(String[] args) throws Exception {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int tc=Integer.parseInt(br.readLine());
+		for(int t=1;t<=tc;t++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			n=Integer.parseInt(st.nextToken()); //구슬의 개수
+			w=Integer.parseInt(st.nextToken()); //너비
+			h=Integer.parseInt(st.nextToken()); //높이
+			min=Integer.MAX_VALUE; //남는 벽돌 개수
+			
+			map=new int[h][w];
+			
+			for(int i=0;i<h;i++) {
+				st=new StringTokenizer(br.readLine());
+				for(int j=0;j<w;j++) {
+					map[i][j]=Integer.parseInt(st.nextToken());
+				}
+			}
+			
+			//입력받기 완
+			
+//			attack(map,new Point(1,2));
+//			attack(map,new Point(2,2));
+//			print(map);
+//			
+//			down(map);
+//			print(map);
+			
+			dfs(0,new int[h][w]);
+			System.out.println(min);
+		}
+	}
+	
+	
+	public static void dfs(int depth,int[][] arr) {
+	
+		int remain=remainBlock(arr);
+		
+		if(remain==0) {
+			min=0;
+			return;
+		}
+		
+		if(depth==n) { //모든 구슬을 사용햇을 때
+			
+			
+			
+			
+			return;
+		}
+		
+		
+		
+		
+	}
+	
+	//남은 block 반환
+	public static int remainBlock(int[][] map) {
+		int cnt=0;
+		for(int i=0;i<h;i++) {
+			for(int j=0;j<w;j++) {
+				if(map[i][j]>0) ++cnt;
+			}
+		}
+		return cnt;
+	}
+	
+	
+	//연쇄 공격
+	public static void attack(int[][] arr,Point start) {
+		
+		int num=arr[start.x][start.y];
+		arr[start.x][start.y]=0;
+		
+		if(num==1) return;
+		
+		for(int d=0;d<4;d++) {
+			for(int c=1;c<num;c++) {
+				int dx=start.x+dir[d][0]*c;
+				int dy=start.y+dir[d][1]*c;
+				if(dx<0 || dx>=h || dy<0 || dy>=w) continue;
+				if(arr[dx][dy]>0) attack(arr,new Point(dx,dy));
+			}
+		}	
+		
+	}
+	
+	
+	//떨어트리기
+	public static void down(int[][] arr) {
+				
+		for(int i=0;i<w;i++) {
+			List<Integer> downElement=new ArrayList<>();
+			for(int j=h-1;j>=0;--j) {
+				if(arr[j][i]>0) {
+					downElement.add(arr[j][i]);
+					arr[j][i]=0;
+				}
+				
+			}
+			
+			int index=h-1;
+			for(int j=0;j<downElement.size();j++) {
+				arr[index-j][i]=downElement.get(j);
+			}
+			
+		}
+		
+		
+	}
+			
+
+	
+	//구슬을 떨어트릴 수 있는 후보 list를 반환함
+	//이 중 1개를 골라 떨어트리는 것이다
+	public static void  find() {
+		
+		list=new ArrayList<>();
+		for(int i=0;i<w;i++) {
+			for(int j=0;j<h;j++) {
+				if(map[j][i]>0) {
+					list.add(new Point(j,i));
+					break;
+				}
+			}
+		}
+		
+		System.out.println("공격가능한 맨위 좌표");
+		for(Point p:list) {
+			System.out.println(p.x+","+p.y);
+		}
+		
+	}
+	
+	
+	public static void print(int[][] arr) {
+		for(int i=0;i<h;i++) {
+			for(int j=0;j<w;j++) {
+				System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("-------------");
+	}
+	
+	
+	public static int[][] copy(int[][] arr){
+		int[][] copy=new int[h][w];
+		for(int i=0;i<h;i++) {
+			for(int j=0;j<w;j++) {
+				copy[i][j]=arr[i][j];
+			}
+		}
+		
+		return copy;
+	}
+
+}

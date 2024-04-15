@@ -1,0 +1,13 @@
+package daily_0411;
+
+import java.io.*;
+import java.util.*;
+
+public class SW_5656_벽돌깨기2 {
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+	}
+
+}

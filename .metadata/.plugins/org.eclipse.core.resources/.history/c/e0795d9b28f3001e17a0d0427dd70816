@@ -1,0 +1,89 @@
+package daily_0405;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_17135_캐슬디펜스 {
+
+	static int n,m,d;
+	static int[] arr;
+
+	static class Point{
+		int x,y;
+
+		public Point(int x, int y) {
+			super();
+			this.x = x;
+			this.y = y;
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		n=Integer.parseInt(st.nextToken());
+		m=Integer.parseInt(st.nextToken());
+		d=Integer.parseInt(st.nextToken());
+		
+		int[][] map=new int[n+1][m]; //어차피 넘겨줘야 되기 때문에 전역하면 헷갈린다. 지역선언 하자.
+		arr=new int[m]; 
+		
+		for(int i=0;i<n;i++) {
+			st=new StringTokenizer(br.readLine());
+			for(int j=0;j<m;j++) {
+				map[i][j]=Integer.parseInt(st.nextToken());
+			}
+		}
+				
+	}
+	
+	//거리 구하기(맨해튼 거리)
+	public static int distance(Point start,Point end) {
+		int distance=Math.abs(start.x-end.x)+Math.abs(start.y-end.y);
+		return distance;
+	}
+	
+	//배열 깊은 복사(newMap에 map 복사)
+	public static void copy(int[][] map,int[][] newMap) {
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n;j++) {
+				newMap[i][j]=map[i][j];
+			}
+		}
+	}
+	
+	//공격
+	public static void attack(int[] arr,int[][] map) {
+		for(int i=0;i<3;i++) { //궁수의 수만큼 반복
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
+	
+	//궁수 위치 조합 구하기
+	public static void combination(int depth,int start) {
+		
+		if(depth==3) {
+			
+			
+			
+			
+		}
+		
+		for(int i=start;i<m;i++) {
+			arr[depth]=i;
+			combination(depth+1, i+1);
+		}
+	}
+
+}

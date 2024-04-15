@@ -1,0 +1,39 @@
+package daily_0405;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_17135_캐슬디펜스 {
+
+	static int n,m,d;
+	static int[][] map;
+	static int[] arr;
+	
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		n=Integer.parseInt(st.nextToken());
+		m=Integer.parseInt(st.nextToken());
+		d=Integer.parseInt(st.nextToken());
+		
+		map=new int[n+1][m];
+		arr=new int[m];
+		
+		
+				
+	}
+	
+	public static void combination(int depth,int start) {
+		
+		if(depth==3) {
+			
+		}
+		
+		for(int i=start;i<m;i++) {
+			arr[depth]=i;
+			combination(depth+1, i+1);
+		
+	}
+
+}

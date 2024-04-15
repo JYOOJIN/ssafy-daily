@@ -1,0 +1,19 @@
+package daily_0405;
+
+import java.io.*;
+import java.util.*;
+
+public class BJ_17135_캐슬디펜스 {
+
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		int n=Integer.parseInt(st.nextToken());
+		int m=Integer.parseInt(st.nextToken());
+		int d=Integer.parseInt(st.nextToken());
+		
+		
+	}
+
+}

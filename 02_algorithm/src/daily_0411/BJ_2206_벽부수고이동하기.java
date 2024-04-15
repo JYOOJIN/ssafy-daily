@@ -3,6 +3,22 @@ package daily_0411;
 import java.io.*;
 import java.util.*;
 
+
+/**
+ * @author 정유진
+ * 문제: BJ_2206_벽부수고이동하기
+ * 난이도: G3
+ * 수행결과: 맞았습니다!!
+ * 메모리: 147312 KB
+ * 시간: 1168 ms
+ * 코드길이: 2401 B
+ * 풀이 전략: 벽을 부순 세상과 벽을 부수지 않은 세상을 나누었다.
+ * 			벽 부쉈나를 true/false로 관리하고 true가 되는 순간 다른 세상으로 넘어간다.
+ * 
+ *   
+ *  */
+
+
 public class BJ_2206_벽부수고이동하기 {
 	
 	static class Point{
