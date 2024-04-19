@@ -55,11 +55,13 @@ public class MemberDaoImpl implements MemberDao {
 		try {
 			conn = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("insert into members (user_name, user_id, user_password, email_id, email_domain, join_date) \n");
+			sql.append("insert into members (user_id, user_name, user_password, email_id, email_domain, join_date) \n");
 			sql.append("values (?, ?, ?, ?, ?, now())");
+			
 			pstmt = conn.prepareStatement(sql.toString());
-			pstmt.setString(1, memberDto.getUserName());
-			pstmt.setString(2, memberDto.getUserId());
+			
+			pstmt.setString(1, memberDto.getUserId());
+			pstmt.setString(2, memberDto.getUserName());
 			pstmt.setString(3, memberDto.getUserPwd());
 			pstmt.setString(4, memberDto.getEmailId());
 			pstmt.setString(5, memberDto.getEmailDomain());
@@ -77,6 +79,9 @@ public class MemberDaoImpl implements MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
+			System.out.println("로그인 정보 찾기 ");
+			System.out.println("userid : " + userId);
+			System.out.println("userPwd : " + userPwd);
 			conn = dataSource.getConnection();
 			StringBuilder loginMember = new StringBuilder();
 			loginMember.append("select user_id, user_name \n");
@@ -86,7 +91,8 @@ public class MemberDaoImpl implements MemberDao {
 			pstmt.setString(1, userId);
 			pstmt.setString(2, userPwd);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
+			if (rs.next()) { 
+				System.out.println("db 에서 로그인 정보를 찾음");
 				memberDto = new MemberDto();
 				memberDto.setUserId(rs.getString("user_id"));
 				memberDto.setUserName(rs.getString("user_name"));
