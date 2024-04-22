@@ -2,34 +2,38 @@ package com.ssafy.member.model.service;
 
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
+import com.ssafy.book.model.mapper.BookMapper;
 import com.ssafy.member.model.MemberDto;
-import com.ssafy.member.model.dao.MemberDao;
+import com.ssafy.member.model.mapper.MemberMapper;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 	
-	private MemberDao memberDao;
+	private MemberMapper memberMapper;
 
-	public MemberServiceImpl(MemberDao memberDao) {
+	public MemberServiceImpl(MemberMapper memberMapper) {
 		super();
-		this.memberDao = memberDao;
+		this.memberMapper=memberMapper;
 	}
 
 	@Override
 	public int idCheck(String userId) throws Exception {
-		return memberDao.idCheck(userId);
+		return memberMapper.idCheck(userId);
 	}
 
 	@Override
+	@Transactional
 	public void joinMember(MemberDto memberDto) throws Exception {
-		memberDao.joinMember(memberDto);
+		memberMapper.joinMember(memberDto);
 	}
 
 	@Override
 	public MemberDto loginMember(String userId, String userPwd) throws Exception {
-		return memberDao.loginMember(userId,userPwd);
+		return memberMapper.loginMember(userId, userPwd);
 	}
 
 }
