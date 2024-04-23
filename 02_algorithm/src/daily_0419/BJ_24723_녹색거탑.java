@@ -1,3 +1,5 @@
+package daily_0419;
+
 import java.io.*;
 
 public class BJ_24723_녹색거탑 {

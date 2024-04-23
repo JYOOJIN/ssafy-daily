@@ -8,8 +8,9 @@ public class BJ_2470_두용액 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
+		
 		int n=Integer.parseInt(br.readLine());
-		long[] map=new long[n];
+		int[] map=new int[n];
 		
 		st=new StringTokenizer(br.readLine());
 		for(int i=0;i<n;i++) {
@@ -20,44 +21,28 @@ public class BJ_2470_두용액 {
 		
 		int start=0;
 		int end=n-1;
-		long result=map[start]+map[end]; 
-		long min=Math.abs(result);
+		int min=Integer.MAX_VALUE;
+		int[] result=new int[2];
 		
-		while(true) {
+		while(start<end) {
 			
-			if(start==end) {
-				if(Math.abs(map[start]+map[end+1])>Math.abs(map[start-1]+map[end])){
-					start-=1;
-					break;
-				}else {
-					end+=1;
-					break;
-				}
+			int sum=map[start]+map[end];
+			
+			if(Math.abs(sum)<min) {
+				min=Math.abs(sum);
+				result[0]=map[start];
+				result[1]=map[end];
+				if(sum==0) break;
+				
 			}
 			
-			if(result>0) { //0보다 작으면 end를 움직인다
-				end-=1;
-				result=map[start]+map[end];
-				if(Math.abs(result)<min) min=Math.abs(result);
-				else {
-					end+=1;
-					break;
-				}
-					
-			}else if(result<0) { //0보다 크면 start를 움직인다
-				start+=1;
-				result=map[start]+map[end];
-				if(Math.abs(result)<min) min=Math.abs(result);
-				else break;
-			}else { 
-				start-=1;
-				break;
-			}
-			
-			
+			if(sum<0) start++;
+			else end--;
 		}
-		System.out.println(map[start]+" "+map[end]);
-		return;
+		
+		
+		
+		System.out.println(result[0]+" "+result[1]);
 		
 	}
 
