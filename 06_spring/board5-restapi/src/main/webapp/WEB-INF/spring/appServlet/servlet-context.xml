@@ -29,19 +29,19 @@
 	
 	<beans:bean id="confirm" class="com.ssafy.interceptor.ConfirmInterceptor"/>
 
-	<interceptors>
+<!-- 	<interceptors>
 		<interceptor>
-			<!-- <mapping path="/article/*"/> -->
+			<mapping path="/article/*"/>
 			<mapping path="/article/write"/>
 			<mapping path="/article/view"/>
 			<mapping path="/article/modify"/>
 			<mapping path="/article/delete"/>
-			<!-- <exclude-mapping path="/user/log*"/> -->
+			<exclude-mapping path="/user/log*"/>
 			
-			<!-- <beans:bean class="com.ssafy.interceptor.ConfirmInterceptor"/> -->
+			<beans:bean class="com.ssafy.interceptor.ConfirmInterceptor"/>
 			<beans:ref bean="confirm"/>
 		</interceptor>
-	</interceptors>
+	</interceptors> -->
 	
 	<!-- fileUpload -->
 	<!-- spring 5.x fileupload -->

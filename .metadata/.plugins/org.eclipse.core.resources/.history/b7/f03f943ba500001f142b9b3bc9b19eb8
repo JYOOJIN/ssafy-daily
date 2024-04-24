@@ -1,0 +1,11 @@
+import java.io.*;
+import java.util.*;
+
+
+public class BJ_1937_욕심쟁이판다 {
+
+	public static void main(String[] args) {
+
+	}
+
+}
