@@ -65,21 +65,15 @@ input[type="date"], input[type="submit"] {
 </style>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/common/nav.jsp" %>
+<%@ include file="/WEB-INF/views/common/nav.jsp" %>
 
 	<div class="container">
 		<h1>상품 목록</h1>
-		<form method="get" action="/product/search">
-			<label for="searchDate">날짜 검색:</label> 
-			
-			<c:if test = "${searchDate ne null }">
-			<input type="date" id="searchDate" name="searchDate" value = "${searchDate }"> 
-			</c:if>
-			<c:if test = "${searchDate eq null }">
-			<input type="date" id="searchDate" name="searchDate">
-			</c:if>
-			<input type="submit" value="검색">
-		</form>
+<!-- 		<form method="get">
+			<label for="searchDate">날짜 검색:</label> <input type="date"
+				id="searchDate" name="searchDate"> <input
+				type="submit" value="검색">
+		</form> -->
 		<table>
 			<tr>
 				<th>Code</th>
@@ -87,26 +81,20 @@ input[type="date"], input[type="submit"] {
 				<th>Price</th>
 				<th>ID</th>
 				<th>Regist Date</th>
+				<th></th>
+				<th></th>
 			</tr>
-			
-			<c:choose>
-				<c:when test="${searchDate ne null and products.size() eq 0}">
-					검색결과에 일치하는 정보가 존재하지 않습니다. 
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="product" items="${products }">
-					<tr>
-						<td><a href="/product/view/${product.code}">${product.code}</a></td>
-						<td>${product.model}</td>
-						<td>${product.price}</td>
-						<td>${product.id}</td>
-						<td>${product.registDate}</td>
-					</tr>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
-			
-			
+			<c:forEach var="product" items="${products }">
+				<tr>
+					<td><a href="/product/view/${product.code}">${product.code}</a></td>
+					<td>${product.model}</td>
+					<td>${product.price}</td>
+					<td>${product.id}</td>
+					<td>${product.registDate}</td>
+					<td><a href="/product/modify/${product.code}">수정</a></td>
+					<td><a href="/product/delete/${product.code}">삭제</a></td>
+				</tr>
+			</c:forEach>
 			
 			
 		</table>

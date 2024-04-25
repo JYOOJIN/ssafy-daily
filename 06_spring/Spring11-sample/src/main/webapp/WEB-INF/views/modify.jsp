@@ -68,14 +68,20 @@ button.btn-secondary {
 	
 	<div
 		style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-		<h2>로그인</h2>
-		<form id="registForm" method="post" action="/product/login">
-			<label for="productCode">아이디</label> 
-			<input type="text" id="id" name="id" placeholder="아이디 입력"> 
-			<label for="model">비밀번호</label> 
-			<input type="password" id="password" name="password" placeholder="비밀번호 입력"> 
+		<h2>상품 정보 수정</h2>
+		<form id="registForm" method="post" action="/product/modify">
+			<label for="productCode">고유번호</label> 
+			<input type="text" id="productCode" name="code" value="${product.code }" readonly="readonly"> 
+			<label for="model">모델명</label> 
+			<input type="text" id="model" name="model" value="${product.model }"> 
+			<label for="price">가격</label>
+			<input type="number" id="price" name="price" value="${product.price }"> 
+			<label for="id">등록자 ID</label> 
+			<input type="text" id="id" name="id" value=${userinfo.id } readonly="readonly"> 
+			<label for="description">상세설명</label>
+			<textarea id="description" name="detail"> ${product.detail }</textarea>
 
-			<button type="submit" class="btn-primary">로그인</button>
+			<button type="submit" class="btn-primary">수정</button>
 			<button type="button" class="btn-secondary"
 				onclick="location.href=''">취소</button>
 		</form>

@@ -17,7 +17,7 @@
 	values (#{code}, #{model}, #{price}, #{id}, now(), #{detail})
 	</insert>
 	
-	<select id="listProduct" parameterType="map" resultMap="product">
+	<select id="listProduct" resultMap="product">
 		select *
 		from product
 	</select>
@@ -30,7 +30,7 @@
 	
 	<update id="updateProduct">
 	update product
-	set model=#{model}, price=#{price}, regist_date=#{registDate}, detail=#{detail}
+	set model=#{model}, price=#{price}, regist_date=now(), detail=#{detail}
 	where code = #{code}
 	</update>
 	
@@ -38,4 +38,10 @@
 	delete from product
 	where code = #{code}
 	</delete>
+	
+	<select id="searchProduct" parameterType="String" resultMap="product">
+	select *
+	from product
+	where year(regist_date)=#{year} and month(regist_date)=#{month} and day(regist_date)=#{day}
+	</select>
 </mapper>

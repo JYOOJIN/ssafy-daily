@@ -65,22 +65,7 @@ input[type="date"], input[type="submit"] {
 </style>
 </head>
 <body>
-	<div class="navbar">
-		<div>
-			<a href="${root}/product">상품 관리</a>
-		</div>
-		<div>
-			<c:if test="${empty userinfo}">
-				<a href="${root}/product/login">로그인</a>
-			</c:if>
-			<c:if test="${not empty userinfo}">
-        	${userinfo.name }님, 로그인 하였습니다.
-        	<a href="${root}/product/logout">로그아웃</a>
-        	</c:if>
-			<a href="${root }/product/list">상품 목록</a> <a
-				href="${root }/product/regist">상품 정보 등록</a>
-		</div>
-	</div>
+<%@ include file="/WEB-INF/views/common/nav.jsp" %>
 
 	<div class="container">
 		<h1>상품 목록</h1>

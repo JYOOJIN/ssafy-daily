@@ -8,9 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Delete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.MergedAnnotations.Search;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,11 +61,20 @@ public class MainController {
 	}
 	
 	@GetMapping("/list")
-	public ModelAndView list(@RequestParam Map<String, String> map) throws Exception{
+	public ModelAndView list() throws Exception{
 		ModelAndView mav = new ModelAndView();
-		List<Product> list = productService.listProduct(map);
+		List<Product> list = productService.listProduct();
 		mav.addObject("products", list);
 		mav.setViewName("list");
+		return mav;
+	}
+	
+	@GetMapping("/manage")
+	public ModelAndView manage() throws Exception{
+		ModelAndView mav = new ModelAndView();
+		List<Product> list = productService.listProduct();
+		mav.addObject("products", list);
+		mav.setViewName("manage");
 		return mav;
 	}
 	
@@ -87,10 +98,58 @@ public class MainController {
 		return "/view";
 	}
 	
+	
+	@GetMapping("/delete/{code}")
+	public String delete(@PathVariable("code") String code, RedirectAttributes redirectAttributes) throws Exception {
+		productService.deleteProduct(code);
+		return "redirect:/product/manage";
+	}
+	
+	@GetMapping("/modify/{code}")
+	public String modify(@PathVariable("code") String code, Model model)
+			throws Exception {
+		Product productDto=productService.getProduct(code);
+		model.addAttribute("product", productDto);
+		return "/modify";
+	}
+
+	@PostMapping("/modify")
+	public String modify(Product productDto,RedirectAttributes redirectAttributes) throws Exception {
+		productService.updateProduct(productDto);
+		return "redirect:/product/manage";
+	}
+	
+	@GetMapping("/search")
+	public ModelAndView search(String searchDate) throws Exception {
+		
+		if(searchDate.isEmpty()) {
+			ModelAndView mav = new ModelAndView();
+			List<Product> list = productService.listProduct();
+			mav.addObject("products", list);
+			mav.setViewName("list");
+	        return mav;
+		}
+		
+		String[] sdate=searchDate.split("-");
+		String year=sdate[0];
+		String month=sdate[1];
+		String day=sdate[2];
+		
+		ModelAndView mav = new ModelAndView();
+		List<Product> list = productService.searchProduct(year, month, day);
+		mav.addObject("products", list);
+		mav.addObject("searchDate",searchDate);
+		mav.setViewName("list");
+		return mav;
+		
+	}
+	
+	
 	@GetMapping("/login")
 	public String login() {
 		return "/login";
 	}
+	
 	
 	
 	@PostMapping("/login")

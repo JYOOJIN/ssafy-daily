@@ -37,9 +37,16 @@ public class ProductServiceImpl implements ProductService {
 		productMapper.deleteProduct(code);
 	}
 
+	
+
 	@Override
-	public List<Product> listProduct(Map<String, String> map) throws Exception {
-		return productMapper.listProduct(map);
+	public List<Product> searchProduct(String year, String month, String day) throws Exception {
+		return productMapper.searchProduct(year,month,day);
+	}
+
+	@Override
+	public List<Product> listProduct() throws Exception {
+		return productMapper.listProduct();
 	}
 
 }
