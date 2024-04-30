@@ -1,0 +1,10 @@
+import java.io.*;
+import java.util.*;
+
+public class BJ_2812_크게만들기 {
+
+	public static void main(String[] args) throws Exception{
+
+	}
+
+}
