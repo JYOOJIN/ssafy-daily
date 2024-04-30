@@ -1,0 +1,11 @@
+import java.io.*;
+import java.util.*;
+
+public class BJ_11559_PuyoPuyo {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+
+	}
+
+}

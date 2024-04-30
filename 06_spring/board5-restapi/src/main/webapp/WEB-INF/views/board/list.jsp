@@ -49,7 +49,7 @@
 				<c:forEach var="article" items="${articles}">    
 	              <tr class="text-center">
 	                <th scope="row">${article.articleNo}</th>
-	                <td class="text-start">
+	                <td .lass="text-start">
 	                  <a
 	                    href="#"
 	                    class="article-title link-dark"

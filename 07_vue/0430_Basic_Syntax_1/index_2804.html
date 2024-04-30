@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .is-selected {
+      background-color: #c8ec8e;
+    }
+
+    .is-required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>다양한 전시 정보</h1>
+    <hr>
+    <ul>
+      <li :id="enTitle" :class="{ 'is-selected': select }">
+        <label for="selected">전시 선택</label>
+        <input type="checkbox" name="selected" id="selected" v-model="select">
+        
+        <h3>{{koTitle}}</h3>
+        <p v-html="description"></p>
+        <hr>
+        <p>{{artMuseum}}</p>
+        <a :href="museumURL">전시장 바로가기</a>
+        <hr>
+        <p>입장권 구매하기</p>
+        <div>
+          <span :class="{ 'is-required': num == 0 }">인원 수 : {{ num }} 명</span>
+          <button @click="decreaseNum">-</button>
+          <button @click="increaseNum">+</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+    <p>총 입장료 : {{fee}} 원</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+    const {createApp,ref}=Vue;
+
+    const app=createApp({
+
+        setup() {
+            const koTitle=ref('모네 인사이드')
+            const enTitle=ref('monet-inside')
+            const artMuseum=ref('예술의 전당')
+            const museumURL=ref('https://www.sac.or.kr/')
+            const description=ref('<p> &lt;모네 인사이드&gt; 는 빛의 화가 <b>클로드 모네</b>가 남긴 소중한 명작들을 현대적 감각으로 재해석해 음악과 함께 감상하는 미디어아트 전시입니다. </p>')
+            
+            const num=ref('0')
+            const fee=ref('0')
+
+            const select=ref(false)
+
+            const decreaseNum=()=>{
+                num.value--
+                fee.value=1000*num.value
+            }
+
+            const increaseNum=()=>{
+                num.value++
+                fee.value=1000*num.value
+            }
+
+
+            return{
+                koTitle,
+                enTitle,
+                artMuseum,
+                museumURL,
+                description,
+                num,
+                fee,
+                decreaseNum,
+                increaseNum,
+                select,
+            }
+        
+        }
+
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

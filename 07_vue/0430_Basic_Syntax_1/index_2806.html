@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .is-selected {
+      background-color: #c8ec8e;
+    }
+
+    .is-required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>다양한 전시 정보</h1>
+    <hr>
+    <ul>
+      <li :id="exhibition.enTitle" :class="{ 'is-selected': exhibition.select }">
+        <label for="selected">전시 선택</label>
+        <input type="checkbox" name="selected" id="selected" v-model="exhibition.select">
+        
+        <h3>{{exhibition.koTitle}}</h3>
+        <p v-html="exhibition.description"></p>
+        <hr>
+        <p>{{exhibition.artMuseum}}</p>
+        <a :href="exhibition.museumURL">전시장 바로가기</a>
+        <hr>
+        <p>입장권 구매하기</p>
+        <div>
+          <span>가격: {{exhibition.price}}</span><br>
+          <span :class="{ 'is-required': exhibition.num == 0 }">인원 수 : {{ exhibition.num }} 명</span>
+          <button @click="decreaseNum" :disabled="exhibition.num == 0" >-</button>
+          <button @click="increaseNum" :disabled="exhibition.num == 10" >+</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+    <p>총 입장료 : {{exhibition.num*exhibition.price}} 원</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+    const {createApp,ref}=Vue;
+
+    const app=createApp({
+
+        setup() {
+
+            //객체화
+            const exhibition= ref({
+                koTitle:'모네 인사이드',
+                enTitle:'monet-inside',
+                artMuseum:'예술의 전당',
+                museumURL:'https://www.sac.or.kr/',
+                description:'<p> &lt;모네 인사이드&gt; 는 빛의 화가 <b>클로드 모네</b>가 남긴 소중한 명작들을 현대적 감각으로 재해석해 음악과 함께 감상하는 미디어아트 전시입니다. </p>',
+                select:false,
+                price:1000,
+                num:0
+
+            })
+
+
+            const decreaseNum=()=>{
+                exhibition.value.num--
+
+            }
+
+            const increaseNum=()=>{
+                exhibition.value.num++
+
+            }
+            return{
+
+                decreaseNum,
+                increaseNum,
+                exhibition
+            }
+        
+        }
+
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

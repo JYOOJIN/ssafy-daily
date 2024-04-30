@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.model.mapper.MemberMapper">
+	<resultMap type="Member" id="member">
+		<result column="no" property="no" />
+		<result column="member_id" property="memberId" />
+		<result column="member_name" property="memberName" />
+		<result column="password" property="password" />
+		<result column="email" property="email" />
+		<result column="mobile" property="mobile" />
+		<result column="is_admin" property="isAdmin" />
+	</resultMap>
+
+	<resultMap type="LoginHistoryDto" id="history">
+		<result column="log_id" property="logId" />
+		<result column="member_id" property="memberId" />
+		<result column="login_time" property="loginTime" />
+		<result column="logout_time" property="logoutTime" />
+	</resultMap>
+	
+
+
+	<insert id="join" parameterType="Member">
+		insert into members (member_id, member_name, password, email, mobile, is_admin)
+		values (#{memberId}, #{memberName}, #{password}, #{email}, #{mobile}, #{isAdmin})
+	</insert>
+	
+	<select id="login" parameterType="map" resultMap="member">
+		select *
+		from member
+		where member_id = #{memberId} and password=#{password}
+	</select>
+	
+	<select id="getMember" resultMap="member">
+		select *
+		from member
+		where member_id = #{memberId}
+	</select>
+	
+	<update id="updateMember">
+		update member
+		set member_name=#{memberName}, password=#{password}, email=#{email}, mobile=#{mobile}
+		where member_id = #{memberId}
+	</update>
+	
+	<select id="listMember" resultMap="history">
+		select *
+		from login_history
+	</select>
+	
+	
+</mapper>

@@ -47,7 +47,7 @@ h1 {
 <body>
 	<div class="navbar">
 		<div>
-			<a href="${root }">상품 관리</a>
+			<a href="${root }">상품 관리222222</a>
 		</div>
 		<div>
 			<c:if test="">
@@ -63,7 +63,7 @@ h1 {
 	</div>
 
 	<div class="container">
-		<h1>안녕하세요, 상품 관리 사이트입니다.</h1>
+		<h1>안녕하세요, 상품 관리 사이트입니다.222</h1>
 		<p>이곳에서는 다양한 상품의 정보를 관리하고 업데이트할 수 있습니다. 편리한 관리를 위해 사용해 보세요.</p>
 	</div>
 </body>
