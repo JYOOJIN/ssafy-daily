@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .is-completed {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Todo Application</h1>
+
+    <ul>
+        <template v-for="todo in todos"> 
+            <!-- v-bind로 todo.isCompleted에 따라 클래스 설정 -->
+            <li :class="{ 'is-completed': todo.isCompleted }"> 
+                <!-- todo.isCompleted 양방향 연결 -->
+                <input type="checkbox" v-model="todo.isCompleted">{{todo.text}}
+            </li>
+        </template>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp,ref } = Vue
+
+    const app = createApp({
+      setup() {
+
+        //id는 식별자
+        let id=0;
+
+        //todos 객체 만들기
+        //id, text, isCompleted 속성
+        const todos = ref([
+            { id: id++, text: "생필품 사기", isCompleted:false },
+            { id: id++, text: "빨래", isCompleted:false},
+            { id: id++, text: "집 청소", isCompleted:false },
+          ])
+
+        return {
+            id,
+            todos
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
